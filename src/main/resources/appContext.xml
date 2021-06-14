@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+      <!--    <bean id="dept1" class="in.stack.smpldi.model.Department">
+         <constructor-arg value="12"></constructor-arg>
+          <constructor-arg value="CSE"></constructor-arg>
+        </bean> -->
+        
+      <!--   <bean id="dept2" class="in.stack.smpldi.model.Department">
+        <property name="id">
+        <value>13</value>
+        </property>
+        <property name="name">
+        <value>ECE</value>
+        </property>
+        </bean> -->
+     
+     <bean id="stu1" class="in.stack.smpldi.model.Student">
+        <constructor-arg value="12"></constructor-arg>
+          <constructor-arg value="anbu"></constructor-arg>
+     </bean>
+     <bean id="stu2" class="in.stack.smpldi.model.Student">
+        <constructor-arg value="13"></constructor-arg>
+          <constructor-arg value="malar"></constructor-arg>
+     </bean>
+       
+      <bean id="stu3" class="in.stack.smpldi.model.Student">
+        <constructor-arg value="14"></constructor-arg>
+          <constructor-arg value="Ram"></constructor-arg>
+     </bean> 
+     
+     <!-- Setter Injection -->
+      <bean id="dept2" class="in.stack.smpldi.model.Department">
+      <property name="id" value="109"></property>
+      <property name="name" value="HR"></property>
+      <property name="students">
+       <list>
+              <ref bean="stu1"></ref>
+              <ref bean="stu2"></ref>
+              <ref bean="stu3"></ref>
+          </list>
+      
+      </property>
+      </bean>
+     
+     
+        <!-- Constructor Based Injection -->
+         <bean id="dept1" class="in.stack.smpldi.model.Department">
+         <constructor-arg value="12"></constructor-arg>
+          <constructor-arg value="CSE"></constructor-arg>
+          <constructor-arg>
+          <list>
+              <ref bean="stu1"></ref>
+              <ref bean="stu2"></ref>
+              <ref bean="stu3"></ref>
+          </list>
+          
+          </constructor-arg>
+        </bean>
+        
+        
+        
+        
+ </beans>
+        
